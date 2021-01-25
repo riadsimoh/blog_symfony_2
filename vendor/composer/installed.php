@@ -1,24 +1,24 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '4e0564124c56f3220f10dcb59aad49cac8b70ed4',
     'name' => '__root__',
   ),
   'versions' => 
   array (
     '__root__' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '4e0564124c56f3220f10dcb59aad49cac8b70ed4',
     ),
     'behat/transliterator' => 
     array (
@@ -489,6 +489,33 @@
       ),
       'reference' => 'b9d4ab7a0f4ca1fc17e323e880d1235076e31dbf',
     ),
+    'phpdocumentor/reflection-common' => 
+    array (
+      'pretty_version' => '2.2.0',
+      'version' => '2.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '1d01c49d4ed62f25aa84a747ad35d5a16924662b',
+    ),
+    'phpdocumentor/reflection-docblock' => 
+    array (
+      'pretty_version' => '5.2.2',
+      'version' => '5.2.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '069a785b2141f5bcf49f3e353548dc1cce6df556',
+    ),
+    'phpdocumentor/type-resolver' => 
+    array (
+      'pretty_version' => '1.4.0',
+      'version' => '1.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6a467b8989322d92aa1c8bf2bebcc6e5c2ba55c0',
+    ),
     'psr/cache' => 
     array (
       'pretty_version' => '1.0.1',
@@ -905,6 +932,15 @@
       ),
       'reference' => '439d92bc88fdda717f2c31335e8db41483ca5c8d',
     ),
+    'symfony/property-info' => 
+    array (
+      'pretty_version' => 'v4.4.18',
+      'version' => '4.4.18.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6a84a401122a17fb2a37d2135672284ee9146682',
+    ),
     'symfony/routing' => 
     array (
       'pretty_version' => 'v4.1.4',
@@ -959,6 +995,15 @@
       array (
         0 => 'v4.2.12',
       ),
+    ),
+    'symfony/serializer' => 
+    array (
+      'pretty_version' => 'v4.4.18',
+      'version' => '4.4.18.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f5a4c865c6c9d8af89915101c8a67efa7415f430',
     ),
     'symfony/stopwatch' => 
     array (
@@ -1058,6 +1103,15 @@
       array (
       ),
       'reference' => '5240e21982885b76629552d83b4ebb6d41ccde6b',
+    ),
+    'webmozart/assert' => 
+    array (
+      'pretty_version' => '1.9.1',
+      'version' => '1.9.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'bafc69caeb4d49c39fd0779086c03a3738cbb389',
     ),
     'zendframework/zend-code' => 
     array (

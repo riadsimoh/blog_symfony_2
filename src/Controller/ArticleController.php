@@ -35,6 +35,7 @@ class ArticleController extends AbstractController
         ]);
     }
 
+
     /**
      * @Route("/news/{slug}", name="article_show")
      */

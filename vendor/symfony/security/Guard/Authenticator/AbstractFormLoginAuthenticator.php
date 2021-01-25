@@ -62,6 +62,7 @@ abstract class AbstractFormLoginAuthenticator extends AbstractGuardAuthenticator
     {
         $url = $this->getLoginUrl();
 
+
         return new RedirectResponse($url);
     }
 }
