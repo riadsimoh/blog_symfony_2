@@ -62,115 +62,139 @@ class __TwigTemplate_36b3c1a946e9f0f16ed8b866c4aa8f6dc9761e4c624d482d8296648e6f1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <div class=\"container\">
-        <div class=\"row\">
+        echo "\t<div class=\"container\">
+\t\t<div
+\t\t\tclass=\"row\">
 
-            <!-- Article List -->
+\t\t\t<!-- Article List -->
 
-            <div class=\"col-sm-12 col-md-8\">
+\t\t\t<div
+\t\t\t\tclass=\"col-sm-12 col-md-8\">
 
-                <!-- H1 Article -->
-                <a class=\"main-article-link\" href=\"#\">
-                    <div class=\"main-article mb-5 pb-3\">
-                        <img src=\"";
-        // line 14
+\t\t\t\t<!-- H1 Article -->
+\t\t\t\t<a class=\"main-article-link\" href=\"#\">
+\t\t\t\t\t<div class=\"main-article mb-5 pb-3\">
+\t\t\t\t\t\t<img src=\"";
+        // line 16
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/meteor-shower.jpg"), "html", null, true);
         echo "\" alt=\"meteor shower\">
-                        <h1 class=\"text-center mt-2\">Ursid Meteor Shower: <br>Healthier than a regular shower?</h1>
-                    </div>
-                </a>
+\t\t\t\t\t\t<h1 class=\"text-center mt-2\">Ursid Meteor Shower:
+\t\t\t\t\t\t\t<br>Healthier than a regular shower?</h1>
+\t\t\t\t\t</div>
+\t\t\t\t</a>
 
-                <!-- Supporting Articles -->
+\t\t\t\t<!-- Supporting Articles -->
 
-                ";
-        // line 21
+\t\t\t\t";
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 21, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 24, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-            // line 22
-            echo "                <div class=\"article-container my-1\">
-                    <a href=\"";
-            // line 23
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_show", ["slug" => twig_get_attribute($this->env, $this->source, $context["article"], "slug", [], "any", false, false, false, 23)]), "html", null, true);
-            echo "\">
-                        <img class=\"article-img\" src=\"";
-            // line 24
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, $context["article"], "imagePath", [], "any", false, false, false, 24)), "html", null, true);
-            echo "\">
-                        <div class=\"article-title d-inline-block pl-3 align-middle\">
-                            <span>";
+            // line 25
+            echo "\t\t\t\t\t<div class=\"article-container my-1\">
+\t\t\t\t\t\t<a href=\"";
             // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 26), "html", null, true);
-            echo "</span>
-                            <small>(";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_show", ["slug" => twig_get_attribute($this->env, $this->source, $context["article"], "slug", [], "any", false, false, false, 26)]), "html", null, true);
+            echo "\">
+\t\t\t\t\t\t\t<img class=\"article-img\" src=\"";
             // line 27
-            echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "nonDeletedComments", [], "any", false, false, false, 27)), "html", null, true);
-            echo " comments)</small>
-                            <br>
-                            ";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, $context["article"], "imagePath", [], "any", false, false, false, 27)), "html", null, true);
+            echo "\">
+\t\t\t\t\t\t\t<div class=\"article-title d-inline-block pl-3 align-middle\">
+\t\t\t\t\t\t\t\t<span>";
             // line 29
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 29), "html", null, true);
+            echo "</span>
+\t\t\t\t\t\t\t\t<small>(";
+            // line 30
+            echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "nonDeletedComments", [], "any", false, false, false, 30)), "html", null, true);
+            echo "
+\t\t\t\t\t\t\t\t\tcomments)</small>
+\t\t\t\t\t\t\t\t<br>
+\t\t\t\t\t\t\t\t";
+            // line 33
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["article"], "tags", [], "any", false, false, false, 29));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["article"], "tags", [], "any", false, false, false, 33));
             foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-                // line 30
-                echo "                                <small>
-                                    <span class=\"badge badge-light\">";
-                // line 31
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 31), "html", null, true);
+                // line 34
+                echo "\t\t\t\t\t\t\t\t\t<small>
+\t\t\t\t\t\t\t\t\t\t<span class=\"badge badge-light\">";
+                // line 35
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 35), "html", null, true);
                 echo "</span>
-                                </small>
-                            ";
+\t\t\t\t\t\t\t\t\t</small>
+\t\t\t\t\t\t\t\t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 34
-            echo "                            <br>
-                            <span class=\"align-left article-details\"><img class=\"article-author-img rounded-circle\" src=\"";
-            // line 35
+            // line 38
+            echo "\t\t\t\t\t\t\t\t<br>
+\t\t\t\t\t\t\t\t<span class=\"align-left article-details\"><img class=\"article-author-img rounded-circle\" src=\"";
+            // line 39
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/alien-profile.png"), "html", null, true);
-            echo "\"> ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "author", [], "any", false, false, false, 35), "html", null, true);
-            echo " </span>
-                            <span class=\"pl-5 article-details float-right\"> ";
-            // line 36
-            echo ((twig_get_attribute($this->env, $this->source, $context["article"], "publishedAt", [], "any", false, false, false, 36)) ? ($this->extensions['Knp\Bundle\TimeBundle\Twig\Extension\TimeExtension']->diff(twig_get_attribute($this->env, $this->source, $context["article"], "publishedAt", [], "any", false, false, false, 36))) : (""));
+            echo "\">
+\t\t\t\t\t\t\t\t\t";
+            // line 40
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "author", [], "any", false, false, false, 40), "html", null, true);
+            echo "
+\t\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t\t\t<span class=\"pl-5 article-details float-right\">
+\t\t\t\t\t\t\t\t\t";
+            // line 43
+            echo ((twig_get_attribute($this->env, $this->source, $context["article"], "publishedAt", [], "any", false, false, false, 43)) ? ($this->extensions['Knp\Bundle\TimeBundle\Twig\Extension\TimeExtension']->diff(twig_get_attribute($this->env, $this->source, $context["article"], "publishedAt", [], "any", false, false, false, 43))) : (""));
             echo "</span>
-                        </div>
-                    </a>
-                </div>
-                ";
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</div>
+\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 41
-        echo "            </div>
-
-            <!-- Right bar ad space -->
-
-
-            <div class=\"col-sm-12 col-md-4 text-center\">
-                <div class=\"ad-space mx-auto mt-1 pb-2 pt-2\">
-                    <img class=\"advertisement-img\" src=\"";
         // line 48
+        echo "\t\t\t</div>
+
+\t\t\t<!-- Right bar ad space -->
+
+
+\t\t\t<div class=\"col-sm-12 col-md-4 text-center\">
+\t\t\t\t<div class=\"ad-space mx-auto mt-1 pb-2 pt-2\">
+\t\t\t\t\t<img class=\"advertisement-img\" src=\"";
+        // line 55
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/space-ice.png"), "html", null, true);
         echo "\">
-                    <p><span class=\"advertisement-text\">New:</span> Space Ice Cream!</p>
-                    <button class=\"btn btn-info\">Buy Now!</button>
-                </div>
+\t\t\t\t\t<p>
+\t\t\t\t\t\t<span class=\"advertisement-text\">New:</span>
+\t\t\t\t\t\tSpace Ice Cream!</p>
+\t\t\t\t\t<button class=\"btn btn-info\">Buy Now!</button>
+\t\t\t\t</div>
 
-                <div class=\"quote-space pb-2 pt-2 px-5\">
-                    <h3 class=\"text-center pb-3\">Trending Quotes</h3>
-                    <p><i class=\"fa fa-comment\"></i> \"Our two greatest problems are gravity and paperwork. We can lick gravity, but sometimes the paperwork is overwhelming.\" <br>— <a href=\"https://en.wikipedia.org/wiki/Wernher_von_Braun\">Wernher von Braun, Rocket Engineer</a></p>
+\t\t\t\t<div class=\"quote-space pb-2 pt-2 px-5\">
+\t\t\t\t\t<h3 class=\"text-center pb-3\">Trending Quotes</h3>
+\t\t\t\t\t<p>
+\t\t\t\t\t\t<i class=\"fa fa-comment\"></i>
+\t\t\t\t\t\t\"Our two greatest problems are gravity and paperwork. We can lick gravity, but sometimes the paperwork is overwhelming.\"
+\t\t\t\t\t\t<br>—
+\t\t\t\t\t\t<a href=\"https://en.wikipedia.org/wiki/Wernher_von_Braun\">Wernher von Braun, Rocket Engineer</a>
+\t\t\t\t\t</p>
 
-                    <p class=\"pt-4\"><i class=\"fa fa-comment\"></i> \"Let's face it, space is a risky business. I always considered every launch a barely controlled explosion.\" <br>— <a href=\"https://en.wikipedia.org/wiki/Aaron_Cohen_(Deputy_NASA_administrator)\">Aaron Cohen, NASA Administrator</a></p>
+\t\t\t\t\t<p class=\"pt-4\">
+\t\t\t\t\t\t<i class=\"fa fa-comment\"></i>
+\t\t\t\t\t\t\"Let's face it, space is a risky business. I always considered every launch a barely controlled explosion.\"
+\t\t\t\t\t\t<br>—
+\t\t\t\t\t\t<a href=\"https://en.wikipedia.org/wiki/Aaron_Cohen_(Deputy_NASA_administrator)\">Aaron Cohen, NASA Administrator</a>
+\t\t\t\t\t</p>
 
-                    <p class=\"pt-4\"><i class=\"fa fa-comment\"></i> \"If offered a seat on a rocket ship, don't ask what seat. Just get on.\"<br>— <a href=\"https://en.wikipedia.org/wiki/Christa_McAuliffe\">Christa McAuliffe, Challenger Astronaut</a>
-                </div>
-            </div>
-        </div>
-    </div>
+\t\t\t\t\t<p class=\"pt-4\">
+\t\t\t\t\t\t<i class=\"fa fa-comment\"></i>
+\t\t\t\t\t\t\"If offered a seat on a rocket ship, don't ask what seat. Just get on.\"<br>—
+\t\t\t\t\t\t<a href=\"https://en.wikipedia.org/wiki/Christa_McAuliffe\">Christa McAuliffe, Challenger Astronaut</a>
+\t\t\t\t\t</p>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -192,7 +216,7 @@ class __TwigTemplate_36b3c1a946e9f0f16ed8b866c4aa8f6dc9761e4c624d482d8296648e6f1
 
     public function getDebugInfo()
     {
-        return array (  157 => 48,  148 => 41,  137 => 36,  131 => 35,  128 => 34,  119 => 31,  116 => 30,  112 => 29,  107 => 27,  103 => 26,  98 => 24,  94 => 23,  91 => 22,  87 => 21,  77 => 14,  65 => 4,  56 => 3,  34 => 1,);
+        return array (  165 => 55,  156 => 48,  145 => 43,  139 => 40,  135 => 39,  132 => 38,  123 => 35,  120 => 34,  116 => 33,  110 => 30,  106 => 29,  101 => 27,  97 => 26,  94 => 25,  90 => 24,  79 => 16,  65 => 4,  56 => 3,  34 => 1,);
     }
 
     public function getSourceContext()
@@ -200,66 +224,89 @@ class __TwigTemplate_36b3c1a946e9f0f16ed8b866c4aa8f6dc9761e4c624d482d8296648e6f1
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class=\"container\">
-        <div class=\"row\">
+\t<div class=\"container\">
+\t\t<div
+\t\t\tclass=\"row\">
 
-            <!-- Article List -->
+\t\t\t<!-- Article List -->
 
-            <div class=\"col-sm-12 col-md-8\">
+\t\t\t<div
+\t\t\t\tclass=\"col-sm-12 col-md-8\">
 
-                <!-- H1 Article -->
-                <a class=\"main-article-link\" href=\"#\">
-                    <div class=\"main-article mb-5 pb-3\">
-                        <img src=\"{{ asset('images/meteor-shower.jpg') }}\" alt=\"meteor shower\">
-                        <h1 class=\"text-center mt-2\">Ursid Meteor Shower: <br>Healthier than a regular shower?</h1>
-                    </div>
-                </a>
+\t\t\t\t<!-- H1 Article -->
+\t\t\t\t<a class=\"main-article-link\" href=\"#\">
+\t\t\t\t\t<div class=\"main-article mb-5 pb-3\">
+\t\t\t\t\t\t<img src=\"{{ asset('images/meteor-shower.jpg') }}\" alt=\"meteor shower\">
+\t\t\t\t\t\t<h1 class=\"text-center mt-2\">Ursid Meteor Shower:
+\t\t\t\t\t\t\t<br>Healthier than a regular shower?</h1>
+\t\t\t\t\t</div>
+\t\t\t\t</a>
 
-                <!-- Supporting Articles -->
+\t\t\t\t<!-- Supporting Articles -->
 
-                {% for article in articles %}
-                <div class=\"article-container my-1\">
-                    <a href=\"{{ path('article_show', {slug: article.slug}) }}\">
-                        <img class=\"article-img\" src=\"{{ asset(article.imagePath) }}\">
-                        <div class=\"article-title d-inline-block pl-3 align-middle\">
-                            <span>{{ article.title }}</span>
-                            <small>({{ article.nonDeletedComments|length }} comments)</small>
-                            <br>
-                            {% for tag in article.tags %}
-                                <small>
-                                    <span class=\"badge badge-light\">{{ tag.name }}</span>
-                                </small>
-                            {% endfor %}
-                            <br>
-                            <span class=\"align-left article-details\"><img class=\"article-author-img rounded-circle\" src=\"{{ asset('images/alien-profile.png') }}\"> {{ article.author }} </span>
-                            <span class=\"pl-5 article-details float-right\"> {{ article.publishedAt ? article.publishedAt|ago }}</span>
-                        </div>
-                    </a>
-                </div>
-                {% endfor %}
-            </div>
+\t\t\t\t{% for article in articles %}
+\t\t\t\t\t<div class=\"article-container my-1\">
+\t\t\t\t\t\t<a href=\"{{ path('article_show', {slug: article.slug}) }}\">
+\t\t\t\t\t\t\t<img class=\"article-img\" src=\"{{ asset(article.imagePath) }}\">
+\t\t\t\t\t\t\t<div class=\"article-title d-inline-block pl-3 align-middle\">
+\t\t\t\t\t\t\t\t<span>{{ article.title }}</span>
+\t\t\t\t\t\t\t\t<small>({{ article.nonDeletedComments|length }}
+\t\t\t\t\t\t\t\t\tcomments)</small>
+\t\t\t\t\t\t\t\t<br>
+\t\t\t\t\t\t\t\t{% for tag in article.tags %}
+\t\t\t\t\t\t\t\t\t<small>
+\t\t\t\t\t\t\t\t\t\t<span class=\"badge badge-light\">{{ tag.name }}</span>
+\t\t\t\t\t\t\t\t\t</small>
+\t\t\t\t\t\t\t\t{% endfor %}
+\t\t\t\t\t\t\t\t<br>
+\t\t\t\t\t\t\t\t<span class=\"align-left article-details\"><img class=\"article-author-img rounded-circle\" src=\"{{ asset('images/alien-profile.png') }}\">
+\t\t\t\t\t\t\t\t\t{{ article.author }}
+\t\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t\t\t<span class=\"pl-5 article-details float-right\">
+\t\t\t\t\t\t\t\t\t{{ article.publishedAt ? article.publishedAt|ago }}</span>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</div>
+\t\t\t\t{% endfor %}
+\t\t\t</div>
 
-            <!-- Right bar ad space -->
+\t\t\t<!-- Right bar ad space -->
 
 
-            <div class=\"col-sm-12 col-md-4 text-center\">
-                <div class=\"ad-space mx-auto mt-1 pb-2 pt-2\">
-                    <img class=\"advertisement-img\" src=\"{{ asset('images/space-ice.png') }}\">
-                    <p><span class=\"advertisement-text\">New:</span> Space Ice Cream!</p>
-                    <button class=\"btn btn-info\">Buy Now!</button>
-                </div>
+\t\t\t<div class=\"col-sm-12 col-md-4 text-center\">
+\t\t\t\t<div class=\"ad-space mx-auto mt-1 pb-2 pt-2\">
+\t\t\t\t\t<img class=\"advertisement-img\" src=\"{{ asset('images/space-ice.png') }}\">
+\t\t\t\t\t<p>
+\t\t\t\t\t\t<span class=\"advertisement-text\">New:</span>
+\t\t\t\t\t\tSpace Ice Cream!</p>
+\t\t\t\t\t<button class=\"btn btn-info\">Buy Now!</button>
+\t\t\t\t</div>
 
-                <div class=\"quote-space pb-2 pt-2 px-5\">
-                    <h3 class=\"text-center pb-3\">Trending Quotes</h3>
-                    <p><i class=\"fa fa-comment\"></i> \"Our two greatest problems are gravity and paperwork. We can lick gravity, but sometimes the paperwork is overwhelming.\" <br>— <a href=\"https://en.wikipedia.org/wiki/Wernher_von_Braun\">Wernher von Braun, Rocket Engineer</a></p>
+\t\t\t\t<div class=\"quote-space pb-2 pt-2 px-5\">
+\t\t\t\t\t<h3 class=\"text-center pb-3\">Trending Quotes</h3>
+\t\t\t\t\t<p>
+\t\t\t\t\t\t<i class=\"fa fa-comment\"></i>
+\t\t\t\t\t\t\"Our two greatest problems are gravity and paperwork. We can lick gravity, but sometimes the paperwork is overwhelming.\"
+\t\t\t\t\t\t<br>—
+\t\t\t\t\t\t<a href=\"https://en.wikipedia.org/wiki/Wernher_von_Braun\">Wernher von Braun, Rocket Engineer</a>
+\t\t\t\t\t</p>
 
-                    <p class=\"pt-4\"><i class=\"fa fa-comment\"></i> \"Let's face it, space is a risky business. I always considered every launch a barely controlled explosion.\" <br>— <a href=\"https://en.wikipedia.org/wiki/Aaron_Cohen_(Deputy_NASA_administrator)\">Aaron Cohen, NASA Administrator</a></p>
+\t\t\t\t\t<p class=\"pt-4\">
+\t\t\t\t\t\t<i class=\"fa fa-comment\"></i>
+\t\t\t\t\t\t\"Let's face it, space is a risky business. I always considered every launch a barely controlled explosion.\"
+\t\t\t\t\t\t<br>—
+\t\t\t\t\t\t<a href=\"https://en.wikipedia.org/wiki/Aaron_Cohen_(Deputy_NASA_administrator)\">Aaron Cohen, NASA Administrator</a>
+\t\t\t\t\t</p>
 
-                    <p class=\"pt-4\"><i class=\"fa fa-comment\"></i> \"If offered a seat on a rocket ship, don't ask what seat. Just get on.\"<br>— <a href=\"https://en.wikipedia.org/wiki/Christa_McAuliffe\">Christa McAuliffe, Challenger Astronaut</a>
-                </div>
-            </div>
-        </div>
-    </div>
+\t\t\t\t\t<p class=\"pt-4\">
+\t\t\t\t\t\t<i class=\"fa fa-comment\"></i>
+\t\t\t\t\t\t\"If offered a seat on a rocket ship, don't ask what seat. Just get on.\"<br>—
+\t\t\t\t\t\t<a href=\"https://en.wikipedia.org/wiki/Christa_McAuliffe\">Christa McAuliffe, Challenger Astronaut</a>
+\t\t\t\t\t</p>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
 {% endblock %}
 ", "article/homepage.html.twig", "/home/riad/symfony_projects/the _spacebar_security/templates/article/homepage.html.twig");
     }

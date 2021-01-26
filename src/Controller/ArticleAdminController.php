@@ -9,12 +9,13 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
-/**
- * @IsGranted("ROLE_ADMIN_ARTICLE")
- */
+
 
 class ArticleAdminController extends AbstractController
 {
+    /**
+     * @IsGranted("ROLE_ADMIN_ARTICLE")
+     */
     /**
      * @Route("/admin/article/new", name="admin_article_new")
      */
@@ -23,5 +24,19 @@ class ArticleAdminController extends AbstractController
 
 
         die('todo');
+    }
+
+    /**
+     * @Route("/admin/article/{id}/edit")
+     */
+
+    public function edit(Article $article)
+    {
+
+        if (!$this->isGranted("MANAGE", $article)) {
+
+            throw $this->createAccessDeniedException('Access denied');
+        }
+        return new Response("é");
     }
 }

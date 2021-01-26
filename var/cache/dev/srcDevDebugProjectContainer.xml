@@ -479,7 +479,7 @@
     <service id="App\DataFixtures\TagFixture" class="App\DataFixtures\TagFixture" public="false" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
-    <service id="App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" public="false" autowire="true" autoconfigure="true">
+    <service id="App\DataFixtures\UserFixture" class="App\DataFixtures\UserFixture" public="false" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
       <argument type="service" id="security.user_password_encoder.generic"/>
     </service>
@@ -512,6 +512,10 @@
       <argument type="service" id="router.default"/>
       <argument type="service" id="security.csrf.token_manager"/>
       <argument type="service" id="security.user_password_encoder.generic"/>
+    </service>
+    <service id="App\Security\Voter\ArticleVoter" class="App\Security\Voter\ArticleVoter" public="false" autowire="true" autoconfigure="true">
+      <tag name="security.voter"/>
+      <argument type="service" id="security.helper"/>
     </service>
     <service id="App\Service\MarkdownHelper" class="App\Service\MarkdownHelper" public="false" autowire="true" autoconfigure="true">
       <argument type="service" id="cache.app"/>
@@ -3733,7 +3737,7 @@
           <argument type="service" id="App\DataFixtures\ArticleFixtures"/>
           <argument type="service" id="App\DataFixtures\CommentFixture"/>
           <argument type="service" id="App\DataFixtures\TagFixture"/>
-          <argument type="service" id="App\DataFixtures\UserFixtures"/>
+          <argument type="service" id="App\DataFixtures\UserFixture"/>
         </argument>
       </call>
     </service>
@@ -4477,8 +4481,8 @@
     <service id=".abstract.instanceof.App\DataFixtures\CommentFixture" class="App\DataFixtures\CommentFixture" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\TagFixture" class="App\DataFixtures\TagFixture" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\TagFixture" class="App\DataFixtures\TagFixture" public="false" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" public="false" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\UserFixture" class="App\DataFixtures\UserFixture" public="false" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\DataFixtures\UserFixture" class="App\DataFixtures\UserFixture" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ApiTokenRepository" class="App\Repository\ApiTokenRepository" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ApiTokenRepository" class="App\Repository\ApiTokenRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ArticleRepository" class="App\Repository\ArticleRepository" public="false" autowire="true" abstract="true"/>
@@ -4489,6 +4493,8 @@
     <service id=".abstract.instanceof.App\Repository\TagRepository" class="App\Repository\TagRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Security\Core\Authorization\Voter\VoterInterface.0.App\Security\Voter\ArticleVoter" class="App\Security\Voter\ArticleVoter" public="false" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Security\Voter\ArticleVoter" class="App\Security\Voter\ArticleVoter" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\DependencyInjection\ServiceSubscriberInterface.0.App\Twig\AppExtension" class="App\Twig\AppExtension" public="false" autowire="true" abstract="true"/>
     <service id=".instanceof.Twig_ExtensionInterface.0.App\Twig\AppExtension" class="App\Twig\AppExtension" public="false" autowire="true" abstract="true"/>
     <service id=".instanceof.Twig\Extension\ExtensionInterface.0.App\Twig\AppExtension" class="App\Twig\AppExtension" public="false" autowire="true" abstract="true"/>
@@ -4703,6 +4709,12 @@
         <argument key="em" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
+    <service id=".service_locator.zv3hrPg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="article" type="service" id=".errored..service_locator.zv3hrPg.App\Entity\Article"/>
+      </argument>
+    </service>
     <service id=".service_locator.Mc5zpHk" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4737,23 +4749,35 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.koq5MDc" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.cJHlmkK" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="encoder" type="service" id="security.user_password_encoder.generic"/>
+        <argument key="gardHandler" type="service" id="security.authentication.guard_handler"/>
+        <argument key="loginFormAuthenticator" type="service" id="App\Security\LoginFormAuthenticator"/>
+      </argument>
+    </service>
+    <service id=".service_locator.zbEg2Qb" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AccountController::index" type="service" id=".service_locator.HmvSwYx"/>
+        <argument key="App\Controller\ArticleAdminController::edit" type="service" id=".service_locator.zv3hrPg"/>
         <argument key="App\Controller\ArticleAdminController::new" type="service" id=".service_locator.v_q6gfB"/>
         <argument key="App\Controller\ArticleController::homepage" type="service" id=".service_locator.Mc5zpHk"/>
         <argument key="App\Controller\ArticleController::show" type="service" id=".service_locator.YwRB2Jv"/>
         <argument key="App\Controller\ArticleController::toggleArticleHeart" type="service" id=".service_locator.N4f9btw"/>
         <argument key="App\Controller\CommentAdminController::index" type="service" id=".service_locator.aVICUrH"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.ypl2DZZ"/>
+        <argument key="App\Controller\SecurityController::register" type="service" id=".service_locator.cJHlmkK"/>
         <argument key="App\Controller\AccountController:index" type="service" id=".service_locator.HmvSwYx"/>
+        <argument key="App\Controller\ArticleAdminController:edit" type="service" id=".service_locator.zv3hrPg"/>
         <argument key="App\Controller\ArticleAdminController:new" type="service" id=".service_locator.v_q6gfB"/>
         <argument key="App\Controller\ArticleController:homepage" type="service" id=".service_locator.Mc5zpHk"/>
         <argument key="App\Controller\ArticleController:show" type="service" id=".service_locator.YwRB2Jv"/>
         <argument key="App\Controller\ArticleController:toggleArticleHeart" type="service" id=".service_locator.N4f9btw"/>
         <argument key="App\Controller\CommentAdminController:index" type="service" id=".service_locator.aVICUrH"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.ypl2DZZ"/>
+        <argument key="App\Controller\SecurityController:register" type="service" id=".service_locator.cJHlmkK"/>
       </argument>
     </service>
     <service id=".service_locator.yQVjGlt" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5121,6 +5145,7 @@
       <argument type="iterator">
         <argument type="service" id="security.access.authenticated_voter"/>
         <argument type="service" id="security.access.role_hierarchy_voter"/>
+        <argument type="service" id="App\Security\Voter\ArticleVoter"/>
       </argument>
       <argument>affirmative</argument>
       <argument>false</argument>
@@ -5133,10 +5158,11 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.koq5MDc"/>
+      <argument type="service" id=".service_locator.zbEg2Qb"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
+    <service id=".errored..service_locator.zv3hrPg.App\Entity\Article" class="App\Entity\Article"/>
     <service id=".errored..service_locator.YwRB2Jv.App\Entity\Article" class="App\Entity\Article"/>
     <service id=".errored..service_locator.N4f9btw.App\Entity\Article" class="App\Entity\Article"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
@@ -5454,7 +5480,7 @@
     <service id="security.authentication.session_strategy.main" alias="security.authentication.session_strategy"/>
     <service id="security.user_checker.main" alias="security.user_checker" public="false"/>
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.koq5MDc"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.zbEg2Qb"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".service_locator.AoifO_3" alias=".2_ServiceLocator~NqqLzMe" public="false"/>

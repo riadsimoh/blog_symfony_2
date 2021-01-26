@@ -3,10 +3,14 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Security\LoginFormAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
@@ -39,13 +43,25 @@ class SecurityController extends AbstractController
     /**
      * @Route("/register", name="app_register")
      */
-    public function register(Request $request)
+    public function register(Request $request, UserPasswordEncoderInterface $encoder, GuardAuthenticatorHandler $gardHandler, LoginFormAuthenticator $loginFormAuthenticator)
     {
 
 
         if ($request->isMethod('POST')) {
 
             $user = new User();
+            $user->setEmail($request->request->get("email"));
+            $user->setFirstName('Riad');
+
+            $password = $encoder->encodePassword($user, $request->request->get("password"));
+            $user->setPassword($password);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();
+
+            return $gardHandler->authenticateUserAndHandleSuccess($user, $request, $loginFormAuthenticator, 'main');
+
             dd($request->request->get('email'));
         }
 
